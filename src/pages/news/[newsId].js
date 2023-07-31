@@ -10,9 +10,11 @@ import {
 } from "@ant-design/icons";
 
 const NewsIdDetails = ({ news }) => {
-    if (!news) {
-        return <p style={{ color: "red" }}>LOADING................</p>
-    }
+    // Loading state.
+    // if (!news) {
+    //     return <p style={{ color: "red" }}>LOADING................</p>
+    // }
+
     return (
         <div style={{ marginTop: "50px" }}>
             <Row
@@ -102,7 +104,6 @@ export const getStaticProps = async (context) => {
     const { params } = context;
     const res = await fetch(`http://localhost:5000/news/${params.newsId}`);
     const data = await res.json();
-    console.log(data)
 
     return {
         props: {
